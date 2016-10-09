@@ -57,7 +57,7 @@ some_cool_numbers
 
 This is a side effect. Something, somewhere else, changed. The input to the function is not the thing that changed. Side effects are also useful. Don't give them up. But, with great convenience comes great debugging headaches. Figuring out what happened when something goes wrong here is more annoying. You can't look just at the input and the output. You also have to look at the environment. Mo' things to keep in your head, mo' headache.
 
-That's it!  All anyone means by a pure function is a function that neither directly or indirectly (through side effects) mutates data.
+That's it!  All anyone means by a pure function is a function that neither directly nor indirectly (through side effects) mutates data.
 
 <strong>2. An Idiot Hangs Himself</strong>
 
@@ -80,7 +80,7 @@ end
 
 'Ha -- I am so smart', I thought. 'I am saving computation power'. And I was. I could refer to that table whenever I wanted without re-computing it. But, I was wrong. I chose the wrong trade off.
 
-This is fine. I was just starting out. I made a decision with some rationale. If asked, I could state the reason. I don't think I was being an idiot for doing this, even though I was wrong. I don't think you are being an idiot for choosing the wrong trade off either.
+This is fine. I was just starting out. I made a decision with some rationale. If asked, I could state the reason. I don't think I was being an idiot for doing this, even though I was wrong (see below). I don't think you are being an idiot for choosing the wrong trade off either.
 
 <strong>3. Obvious Headaches</strong>
 
