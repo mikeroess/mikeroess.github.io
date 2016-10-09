@@ -4,7 +4,8 @@ This one is really simple. You already know and understand it. A pure function a
 
 <em>Pure Function: Addition</em>
 
-[code lang="text"]
+
+````ruby
 first_num = 5
 second_num = 12
 
@@ -16,31 +17,31 @@ first_num
 
 second_num
 => 12
+````
 
-[/code]
 
 See -- nothing changed in the environment.
 
-<em>Impure Function (mutated data):</em> <code>map!</code>
+<em>Impure Function (mutated data):</em> `map!`
 
-[code lang="text"]
+
+````ruby
 some_cool_numbers = [1, 3, 5, 7, 11, 13]
 some_cool_numbers.map! { |number| number**2 }
 
 some_cool_numbers
 => [1, 9, 25, 49, 121, 169]
+````
 
-[/code]
-
-Whenever you call <code>map!</code> something in the environment will be different
+Whenever you call `map!` something in the environment will be different
 after the call than it was before the call.
 
-This is great! This is not terrible! Do not give up <code>map!</code>, or any other
+This is great! This is not terrible! Do not give up `map!`, or any other
 'bang' functions. They are useful.
 
-<em>Impure Function (side effect):</em> <code>each</code>
+<em>Impure Function (side effect):</em> `each`
 
-[code lang="text"]
+````ruby
 sum = 0
 
 some_cool_numbers = [1, 3, 5, 7, 11, 13]
@@ -52,7 +53,7 @@ sum
 
 some_cool_numbers
 => [1, 3, 5, 7, 11, 13]
-[/code]
+````
 
 This is a side effect. Something, somewhere else, changed. The input to the function is not the thing that changed. Side effects are also useful. Don't give them up. But, with great convenience comes great debugging headaches. Figuring out what happened when something goes wrong here is more annoying. You can't look just at the input and the output. You also have to look at the environment. Mo' things to keep in your head, mo' headache.
 
@@ -63,7 +64,7 @@ That's it!  All anyone means by a pure function is a function that neither dire
 Before enrolling in App Academy (blah, blah, blah -- we can talk about that elsewhere), I had to do some prep work.  One assignment was a simple program that would let a human play hang-man against a computer. In order to make the computer a better opponent I fed it a dictionary and had it get the letter frequencies of reasonable guesses (guesses of correct length, that contained all the right guesses, none of the wrong guesses, etc.). Knowing that I would want to refer to these frequencies several times, and not wanting to re-calculate them each time, I created an instance variable to store this frequency table. Then, I wrote a <code>get_frequencies</code> function that would set the value
 of this variable whenever I ran it.
 
-[code lang="text"]
+````ruby
 def get_frequencies(words)
   frequencies = Hash.new(0)
     words.each do |word|
@@ -75,7 +76,7 @@ def get_frequencies(words)
   end
   @letter_frequencies = frequencies
 end
-[/code]
+````
 
 'Ha -- I am so smart', I thought. 'I am saving computation power'. And I was. I could refer to that table whenever I wanted without re-computing it. But, I was wrong. I chose the wrong trade off.
 
@@ -87,7 +88,7 @@ This was a very bad design decision. I was now unable to calculate any letter fr
 
 And they were right. That is what I did.
 
-[code lang="text"]
+````ruby
 def get_frequencies_single_word(word)
   frequencies = Hash.new(0)
   word.chars.each do |letter|
@@ -95,15 +96,15 @@ def get_frequencies_single_word(word)
   end
   frequencies
 end
-[/code]
+````
 
-This code is almost identical to <code>get_frequencies(words)</code> except that 1) it operates on a string and 2) it has no side effects (it is a pure function). This is annoying. It makes my class longer and I don't want to look at a long class. The method is functionally similar enough that it has a similar name, meaning my auto-complete functions are more irritating to use. I am liable to make stupid errors by using the wrong method. All of this is stuff that I'll have to either deal with for the life of the program, or refactor to get rid of.[2]  This is all just annoying garbage that I'd rather not deal with. I assume you'd rather not deal with it either.
+This code is almost identical to `get_frequencies(words)` except that 1) it operates on a string and 2) it has no side effects (it is a pure function). This is annoying. It makes my class longer and I don't want to look at a long class. The method is functionally similar enough that it has a similar name, meaning my auto-complete functions are more irritating to use. I am liable to make stupid errors by using the wrong method. All of this is stuff that I'll have to either deal with for the life of the program, or refactor to get rid of.[2]  This is all just annoying garbage that I'd rather not deal with. I assume you'd rather not deal with it either.
 
 <strong>4. Pure Function Solution</strong>
 
 This was an easy and unforced error. There is an obvious solution to this.
 
-[code lang="text"]
+````ruby
 def get_frequencies(words)
   frequencies = Hash.new(0)
   words.each do |word|
@@ -118,11 +119,11 @@ def get_frequencies(words)
   # instead just return frequencies like this:
   frequencies
 end
-[/code]
+````
 
 The new function is :
 
-[code lang="text"]
+````ruby
 def get_frequencies(words)
   frequencies = Hash.new(0)
   words.each do |word|
@@ -134,11 +135,11 @@ def get_frequencies(words)
   end
   frequencies
 end
-[/code]
+````
 
 This is a pure function. It takes an input. It creates the output within itself. It returns that output. Nothing else is changed by the function. There are no side effects, and the input is not modified. It does everything my other two functions did[3]. All I have to do is change the code so that it's called within the appropriate variable assignment, like so:
- <code>get_frequencies(words)</code> becomes:
-<code>@letter_frequencies = get_frequencies(words)</code>.
+ `get_frequencies(words)` becomes:
+`@letter_frequencies = get_frequencies(words)`.
 
 In other words, all you do is take all of the mutation outside of the function itself. Your functions are far more useful now.
 
@@ -146,15 +147,15 @@ In other words, all you do is take all of the mutation outside of the function i
 
 Ruby people pride themselves in having code that is easy on the eyeballs.
 
-<code>get_frequencies(words)</code>
+`get_frequencies(words)`
 
 is easier to look at than:
 
-<code>@letter_frequencies = get_frequencies(words)</code>
+`@letter_frequencies = get_frequencies(words)`
 
 We are humans. We read prose. Lots of assignments in a row are more irritating to read than lots of (well named) function calls in a row. There is less stuff for your brain to parse. Don't believe me? Look a this:
 
-[code lang="text"]
+````ruby
 def handle_response(letter, indicies)
   if @board == []
     @secret_length.times { @board << "-"}
@@ -168,22 +169,22 @@ def handle_response(letter, indicies)
   filter_candidate_words
   end
 end
-[/code]
+````
 
 vs.
 
-[code lang="text"]
+````ruby
 def handle_response(letter, indicies)
   create_board if is_board_empty?
   update_board_value
   update_guessed_letters
   filter_candidate_words
 end
-[/code]
+````
 
 The former is a lot more difficult to look a than the latter.
 
-You can have the best of both worlds by creating a lot of additional wrapper functions like <code>get_frequencies_and_assign_to_frequency_table</code>. But, that takes time and adds lines to your code. It's another trade off. Is it worth it? This is a judgement call. It's also one that I don't currently have enough experience to make (10/16).
+You can have the best of both worlds by creating a lot of additional wrapper functions like `get_frequencies_and_assign_to_frequency_table`. But, that takes time and adds lines to your code. It's another trade off. Is it worth it? This is a judgement call. It's also one that I don't currently have enough experience to make (10/16).
 
 But, you know, for a beginner just banging around, simply recognizing these concerns is a good thing. Please don't shame anyone for making a sub-optimal design decision. Find out why they did, explain why you don't like it, and then try to figure out what the best thing to do is.
 
