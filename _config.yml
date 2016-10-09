@@ -149,6 +149,20 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
+#default settings for posts
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
 
 # Markdown Processing
 kramdown:
