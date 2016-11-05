@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Michael Roess Recipe</title>
+  </head>
+
+  <body>
+    <h1>Eggs</h1>
+    <h2>Fast and Delicious Egg Breakfast</h2>
+    <ul>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><a href="#ingredients">Directions</a></li>
+    </ul>
+
+    <a name="description"/>
+    <h2>Descriptions</h2>
+    <p>Hey Friends.  I value delicious breakfast.  I also value time.  These are
+      often but not always difficult values to reconcile.  I have found one great
+      way, though.  That is with this Fast and Delicious Egg Breakfast.   What is it?
+      It's just two slices of toast, some cheese, salsa, and an egg each.  It takes less
+      then 10 minutes to make if you do everything right, it tastes great, and cleanup
+      is only a few minutes.  The only cooking involved is frying an egg, so read all about that <a href="https://en.wikipedia.org/wiki/Fried_egg">
+      here</a>.  Wikipedia has a shocking amount of
+      information in the fried egg article.  Looks like some fool even took a 'foodie picture' of
+      something like this: <img src="http://thebuzzmagazines.com/sites/default/files/recipes/2016/06/salsa%20and%20egg%20toast%20resized.jpg">
+
+    <a name="ingredients"/>
+    <h2>Ingredients</h2>
+    <ul>
+        <li>Two Eggs</li>
+        <li>Two Slices of Toast</li>
+        <li>Two Dollops of Salsa</li>
+        <li>Two Slices of Cheddar Cheese</li>
+        <li>Frying Oil</li>
+
+
+    <a name="directions"/>
+    <h2>Directions</h2>
+    <ol>
+      <li>Turn the high heat up on an oiled pan.</li>
+        Pro Tip--Start this before you get the ingredients to save time!
+      <li>Put the bread in the toaster and start that cooking on the side.</li>
+      <li>Crack two eggs into the pan as soon as you can either smell or hear the oil.</li>
+      <li>While those whites get solid, take your now toasted bread out.  Add a dollop of salsa and a slice of cheese per piece.</li>
+          Pro Tip--Put the cheese on the bottom.  The warm toast will melt it and, through it, warm the salsa.  The egg on top will also warm the salsa.
+      <li>Flip the eggs. Get rid of gross uncooked whites.</li>
+      <li>Put everything but the pan and the plate away while those whites get cooked.</li>
+        Don't worry, you'll still get runny yolks.  That's why we heated the pan to high.
+      <li>Place eggs on toast with a 1:1 ratio.</li>
+      <li>Eat while hot, savor, enjoy.  You are a human and your life has value.</li>
+      <li>Clean up!  Don't be a slob!</li>
+    </ol>
+
+
+<!--I hate to toot my own horn here, but this one is a Mike Roess original.  You can be poor and busy and still feel like a human by starting your day with this bad boy-->
+  </body>
+</html>
