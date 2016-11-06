@@ -98,7 +98,7 @@ def get_frequencies_single_word(word)
 end
 ````
 
-This code is almost identical to `get_frequencies(words)` except that 1) it operates on a string and 2) it has no side effects (it is a pure function). This is annoying. It makes my class longer and I don't want to look at a long class. The method is functionally similar enough that it has a similar name, meaning my auto-complete functions are more irritating to use. I am liable to make stupid errors by using the wrong method. All of this is stuff that I'll have to either deal with for the life of the program, or refactor to get rid of.[2]  This is all just annoying garbage that I'd rather not deal with. I assume you'd rather not deal with it either.
+This code is almost identical to `get_frequencies(words)` except that 1) it operates on a string and 2) it has no side effects (it is a pure function). This is annoying. It makes my class longer and I don't want to look at a long class. The method is functionally similar enough that it has a similar name, meaning my auto-complete functions are more irritating to use. I am liable to make stupid errors by using the wrong method. All of this is stuff that I'll have to either deal with for the life of the program, or refactor to get rid of.[2]  I assume you'd rather not deal with it either.
 
 <strong>4. Pure Function Solution</strong>
 

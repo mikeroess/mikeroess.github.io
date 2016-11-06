@@ -1,0 +1,27 @@
+One nice way to begin to think about programming languages is to port over
+categories from natural languages.  For example, I'll often tell people that
+objects are nouns and functions are verbs.  As with any translation, this isn't quite
+accurate, but it can help beginners wrap their heads things.
+
+So, when a function lives within an object, it is no longer called a function.  It is called a method.
+Why?
+
+I can't tell you the original answer.  But, here is an answer that satisfies me (and helps me remember).
+
+Suppose I have a Chair class.
+
+````ruby
+class Chair
+  def initialize(style, status, working_legs=4)
+    @style = style
+    @status = status
+    @working_legs = working_legs
+  end
+
+  def am_i_broken?
+    @status == "broken"
+  end
+
+  
+end
+````
