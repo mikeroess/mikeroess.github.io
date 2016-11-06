@@ -2,11 +2,15 @@
 
 The amount of configuration that Rails saves is wonderful for a seasoned dev.  For a non-seasoned dev, it can be an impediment to understanding what your application is actually doing, or it was for me in 2014.  One regular source of pain came from not really understanding how `has_*` or `belongs_to` relationships worked.
 
+
 **Dummy App**
+&nbs;
 
 The most associationally complex app I've built was designed to compare different methodologies for measuring affect.  For the purposes of this post, it'll be worth understanding that some of the users tested out the day reconstruction method (read a paper about the DRM by Dylan Smith, the social scientist I built the app for, <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwjHmP_05pTQAhWJ54MKHdoaDzwQFgggMAE&url=http%3A%2F%2Fstat.gov.pl%2Fdownload%2Fgfx%2Fportalinformacyjny%2Fen%2Fdefaultlistaplikow%2F3450%2F7%2F1%2F7a_smith_s429-440_1_8_2016.pdf&usg=AFQjCNFdXtJHcTAZVzjmZE7-sK_wJDFzRw&sig2=LG4U7LfqBCupkr9YjYLohw&bvm=bv.137904068,d.eWE&cad=rja">here</a>).  For our purposes, it's worth knowing that each of the users in this condition users had many DRMs (they filled out two over the course of the study).  The DRM is a complex instrument, and it had various parts.  Each DRM has a DrmMorning, DrmAfternoon, and a DrmEvening.
 
+
 **`belongs_to`**
+
 
 I'll just assume that anyone writing a `belongs_to` association has written a migration before and understands a db table.  Every table has a primary key, typically some self-incrementing non-null integer.  When you declare that a model class belongs to another model class you are telling rails, 'my table includes another key, one that references the primary key of a different table.  Whenever you join these tables for a query join them on this foreign key.'  That's it!  All belongs_to does is tell rails "hey--this is how to join these tables."
 
@@ -39,7 +43,9 @@ You could do even more work and write it out as:
   end
 ````
 
+&nbs;
 **`has_many` or `has_one`**
+&nbs;
 
 Now that we've gotten the hard work out of the way, the rest should be easy.  the tables underlying models that have other objects don't hold references to the tables of those objects, and expect those tables to hold references to to themselves.  God, that ws a mouthful.  Let's just look at code.
 
@@ -61,7 +67,9 @@ has_many(:drm_mornings,
 ````
 Again, this just defines a method in the `Drm` class.
 
+
 **`has_many_through`**
+
 
 Now that we know what` has_many` and `belongs_to` macros actually do (define methods that tell rails how to perform sql queries), it's a lot easier to understand `has_many_through`, something that gave me no small amount of grief.
 
