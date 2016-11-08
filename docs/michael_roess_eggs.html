@@ -69,33 +69,36 @@
       <form>
         <label for="name">Reviewer Name</label>
         <input type="text" name="review[name]" id="name">
+        <br />
 
         <input type="radio" name="review[rating]" id="rating_1" value=1 checked>
         <label for="rating_1">1</label>
-        <br>
+        <br />
 
         <input type="radio" name="review[rating]" id="rating_2" value=2>
         <label for="rating_2">2</label>
-        <br>
+        <br />
 
         <input type="radio" name="review[rating]" id="rating_3" value=3>
         <label for="rating_3">3</label>
-        <br>
+        <br />
 
         <input type="radio" name="review[rating]" id="rating_4" value=4>
         <label for="rating_4">4</label>
-        <br>
+        <br />
 
         <input type="radio" name="review[rating]" id="rating_5" value=5>
         <label for="rating_5">5</label>
+        <br />
 
         <label for="cooking_expertise">Cooking Expertise</label>
-        <input type="select" name=reivew[cooking_expertise] id="cooking_expertise">
-        <option selected="true" disabled="disabled" value="Select Cooking Expertise">Select Cooking Expertise
-        <option value="Sometimes Cook">Sometimes Cook</option>
-        <option value="Cook Everyday">Cook Everyday</option>
-        <option value="Cooking is a Hobby">Cooking is a Hobby</option>
-        <option value="Professional Chef">Professional Chef</option>
+        <select name=reivew[cooking_expertise] id="cooking_expertise">
+          <option selected="true" disabled="disabled" value="Select Cooking Expertise">Select Cooking Expertise
+          <option value="Sometimes Cook">Sometimes Cook</option>
+          <option value="Cook Everyday">Cook Everyday</option>
+          <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+          <option value="Professional Chef">Professional Chef</option>
+        </select>
 
         <label for="review_body">Review</label>
         <input type="textarea" name="review[review_body]" id="review_body">
