@@ -66,11 +66,12 @@
     <section>
 
     <section>
-      <form>
+      <form action="/reviews" method="post">
         <label for="name">Reviewer Name</label>
         <input type="text" name="review[name]" id="name">
         <br /><br />
 
+        <label for="rating">Rating</label>
         <input type="radio" name="review[rating]" id="rating_1" value=1 checked>
         <label for="rating_1">1</label>
         <br />
@@ -93,21 +94,18 @@
 
         <label for="cooking_expertise">Cooking Expertise</label>
         <select name=reivew[cooking_expertise] id="cooking_expertise">
-          <option selected="true" disabled="disabled" value="Select Cooking Expertise">Select Cooking Expertise
+          <option selected="true" disabled="disabled" value="Select Cooking Expertise">Select Cooking Expertise</option>
           <option value="Sometimes Cook">Sometimes Cook</option>
           <option value="Cook Everyday">Cook Everyday</option>
           <option value="Cooking is a Hobby">Cooking is a Hobby</option>
           <option value="Professional Chef">Professional Chef</option>
         </select>
         <br /><br />
-        <label>Review
-          <textarea name="review[review_body]" cols="20" rows="20"><textarea>
-        </label>
-<!--
-        <label>Review
-                 <textarea name="review" cols="30" rows="10"></textarea>
-               </label> -->
 
+
+          <label>Review
+            <textarea name="review" cols="30" rows="10"></textarea>
+          </label>
 
         <input type="submit" value="submit review">
       </form>
