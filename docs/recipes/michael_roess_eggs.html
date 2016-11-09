@@ -5,14 +5,14 @@
     <title> Michael Roess's Famous Breakfast Eggs</title>
     <meta name="description" content="Fast, cheap, and delicious breakfast for the poor gourmand on the run">
     <script type="text/javascript" src="example.js"/>
-    <!-- <script>
+    <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-12345678-9', 'auto');
-      ga('send', 'pageview'); -->
+      ga('send', 'pageview');
 
     </script>
     <link rel="stylesheet" href="./style.css" type="text/css" />
@@ -28,11 +28,25 @@
           <li><a href="#ingredients">Directions</a></li>
         </ul>
       </nav>
-      <header>
-    <h1>Eggs</h1>
-    <h2>Fast and Delicious Egg Breakfast</h2>
+    </header>
+
+    <aside>
+      <h2>Ingredients</h2>
+      <a name="ingredients"/>
+      <ul>
+          <li>Two Eggs</li>
+          <li>Two Slices of Toast</li>
+          <li>Two Dollops of Salsa</li>
+          <li>Two Slices of Cheddar Cheese</li>
+          <li>Frying Oil</li>
+      </ul>
+    </aside>
 
     <section>
+
+    <h1>Eggs</h1>
+
+    <h2>Fast and Delicious Egg Breakfast</h2>
     <a name="description"/>
       <h2>Descriptions</h2>
         <p>Hey Friends.  I value delicious breakfast.  I also value time.  These are
@@ -47,17 +61,7 @@
             <figure><img src="http://thebuzzmagazines.com/sites/default/files/recipes/2016/06/salsa%20and%20egg%20toast%20resized.jpg"></figure>
             <figcaption><a href="https://en.wikipedia.org/wiki/Fried_egg">Read about fried eggs here</a></figcaption>
     </section>
-    <aside>
-      <a name="ingredients"/>
-      <h2>Ingredients</h2>
-      <ul>
-          <li>Two Eggs</li>
-          <li>Two Slices of Toast</li>
-          <li>Two Dollops of Salsa</li>
-          <li>Two Slices of Cheddar Cheese</li>
-          <li>Frying Oil</li>
-      </ul>
-    </aside>
+
 
     <section>
       <a name="directions"/>
@@ -68,46 +72,46 @@
         <li>Put the bread in the toaster and start that cooking on the side.</li>
         <li>Crack two eggs into the pan as soon as you can either smell or hear the oil.</li>
         <li>While those whites get solid, take your now toasted bread out.  Add a dollop of salsa and a slice of cheese per piece.</li>
-            Pro Tip--Put the cheese on the bottom.  The warm toast will melt it and, through it, warm the salsa.  The egg on top will also warm the salsa.
+            <!-- Pro Tip: Put the cheese on the bottom.  The warm toast will melt it and, through it, warm the salsa.  The egg on top will also warm the salsa. -->
         <li>Flip the eggs. Get rid of gross uncooked whites.</li>
         <li>Put everything but the pan and the plate away while those whites get cooked.</li>
-          Don't worry, you'll still get runny yolks.  That's why we heated the pan to high.
+          <!-- Don't worry, you'll still get runny yolks.  That's why we heated the pan to high. -->
         <li>Place eggs on toast with a 1:1 ratio.</li>
         <li>Eat while hot, savor, enjoy.  You are a human and your life has value.</li>
         <li>Clean up!  Don't be a slob!</li>
       </ol>
-    <section>
+    </section>
 
     <section id="reviews">
       <form action="/reviews" method="post" id="review-form">
         <label for="name">Reviewer Name</label>
-        <input type="text" name="review[name]" id="name">
-        <br /><br />
+        <input type="text" name="name" id="name">
+        <br />
 
         <label for="rating">Rating</label>
-        <input type="radio" name="review[rating]" id="rating_1" value=1 checked>
+        <input type="radio" name="rating" value=1 checked>
         <label for="rating_1">1</label>
         <br />
 
-        <input type="radio" name="review[rating]" id="rating_2" value=2>
+        <input type="radio" name="rating" value=2>
         <label for="rating_2">2</label>
         <br />
 
-        <input type="radio" name="review[rating]" id="rating_3" value=3>
+        <input type="radio" name="rating" value=3>
         <label for="rating_3">3</label>
         <br />
 
-        <input type="radio" name="review[rating]" id="rating_4" value=4>
+        <input type="radio" name="rating" value=4>
         <label for="rating_4">4</label>
         <br />
 
-        <input type="radio" name="review[rating]" id="rating_5" value=5>
+        <input type="radio" name="rating" value=5>
         <label for="rating_5">5</label>
         <br /><br />
 
-        <label for="cooking_expertise">Cooking Expertise</label>
-        <select name=reivew[cooking_expertise] id="cooking_expertise">
-          <option selected="true" disabled="disabled" value="Select Cooking Expertise">Select Cooking Expertise</option>
+        <label for="expertise">Cooking Expertise</label>
+        <select name=expertise id="expertise">
+          <option selected="true" disabled="true" value="Select Cooking Expertise">Select Cooking Expertise</option>
           <option value="Sometimes Cook">Sometimes Cook</option>
           <option value="Cook Everyday">Cook Everyday</option>
           <option value="Cooking is a Hobby">Cooking is a Hobby</option>
@@ -117,10 +121,10 @@
 
 
           <label>Review
-            <textarea name="review" cols="30" rows="10"></textarea>
+            <textarea id ="review" name="review" cols="30" rows="10"></textarea>
           </label>
 
-        <input type="submit" value="submit review">
+        <input type="submit" value="Submit Review">
       </form>
     </section>
 
