@@ -1,0 +1,40 @@
+body {
+  font-family: Ariel, sans-serif;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.ingredients-list {
+  list-style: "square inside"
+}
+
+ol {
+  font-family: garamond;
+}
+
+header > img {
+  width: 100px;
+}
+
+figure img {
+  width: 600px;
+}
+
+li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  background-color: #AFAAEE;
+}
+
+#user_review {
+  font-family: garamond;
+}
