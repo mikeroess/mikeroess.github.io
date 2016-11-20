@@ -17,6 +17,14 @@ li {
   display: block;
 }
 
+ol {
+  list-style: lower-alpha;
+}
+
+ul {
+  list-style: circle;
+}
+
 input[type="radio"], select, input[type="submit"]{
   cursor: pointer;
   /*outline: none;*/
@@ -28,6 +36,7 @@ input[type="radio"] {
    height: 27px;
    background-image: url(./stars.png);
    display: inline-block;
+
 }
 
 input[type="radio"]:checked {
@@ -48,4 +57,8 @@ h3 + .user_review{
 
 ol li:nth-of-type(2n) {
   background-color: #d3d3d3
+}
+
+img {
+  width: 100%;
 }
