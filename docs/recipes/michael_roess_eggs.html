@@ -17,7 +17,7 @@
     </script>
     <link rel="stylesheet" href="./css_custom_reset.css" media="screen" type="text/css">
     <!-- <link rel="stylesheet" href="./style.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="./new_style.css" type="text/css"> -->
+    <link rel="stylesheet" href="./new_style.css" type="text/css">
   </head>
 
   <body>
@@ -66,11 +66,11 @@
 
 
     <section>
-      <a name="directions"/>
+      <a name="directions"/></a>
       <h2>Directions</h2>
       <ol>
         <li>Turn the high heat up on an oiled pan.</li>
-          Pro Tip--Start this before you get the ingredients to save time!
+        <!-- Pro Tip: Start this before you get the ingredients to save time! -->
         <li>Put the bread in the toaster and start that cooking on the side.</li>
         <li>Crack two eggs into the pan as soon as you can either smell or hear the oil.</li>
         <li>While those whites get solid, take your now toasted bread out.  Add a dollop of salsa and a slice of cheese per piece.</li>
@@ -85,13 +85,13 @@
     </section>
 
     <section id="reviews">
-      <h2>reviews</h2>
+      <h3>Reviews</h3>
       <form action="/reviews" method="post" id="review-form">
         <label for="name">Reviewer Name</label>
         <input type="text" name="name" id="name">
         <br />
 
-        <label for="rating">Rating</label>
+        <!-- <label for="rating">Rating</label> -->
         <input type="radio" name="rating" value=1 checked>
         <label for="rating_1">1</label>
         <br />
@@ -112,7 +112,7 @@
         <label for="rating_5">5</label>
         <br /><br />
 
-        <label for="expertise">Cooking Expertise</label>
+        <!-- <label for="expertise">Cooking Expertise</label> -->
         <select name=expertise id="expertise">
           <option selected="true" disabled="true" value="Select Cooking Expertise">Select Cooking Expertise</option>
           <option value="Sometimes Cook">Sometimes Cook</option>
@@ -123,9 +123,9 @@
         <br /><br />
 
 
-          <label>Review
-            <textarea id ="review" name="review" cols="30" rows="10"></textarea>
-          </label>
+          <label for="review">Review</label><br>
+            <textarea id="review" name="review" cols="30" rows="10"></textarea>
+
 
         <input type="submit" value="Submit Review">
       </form>
