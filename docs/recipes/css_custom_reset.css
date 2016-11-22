@@ -22,7 +22,7 @@ ol {
 }
 
 ul {
-  list-style: circle;
+  list-style: disc;
 }
 
 input[type="radio"], select, input[type="submit"]{
