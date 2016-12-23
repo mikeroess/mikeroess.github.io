@@ -1,4 +1,0 @@
-Terminology is always confusing for a beginner.  If you believe <a href="https://www.amazon.com/Rethinking-Expertise-Harry-Collins/dp/0226113612">
-some philosophers</a> then mastering a domain's terminology nearly qualifies you as an expert.
-In this section I'm going to try to lay in as succinct and clear a way as possible some of the
-issues that I've seen beginners have trouble with.  
